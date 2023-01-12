@@ -149,3 +149,45 @@ header{
         border-color: green;
     }
 }
+
+
+//*******  FOOTER *********/
+//! FOR LOOP
+//*************************
+
+//***********************************************
+//! IF-ELSE
+//************************************************
+
+
+footer{
+    $dark:1;
+    p{
+        @if  $dark==1 {
+            background-color: gray;
+            
+        } @else if $dark==2 {
+            background-color: lightgray;
+            
+        } @else {
+            background-color: orangered;
+            
+        }
+    }
+
+    .social-icons{
+        display: flex;
+        height: 10rem;
+        $textColor: #990000, #55004e, #0fa8a1, red, #64c217;
+
+        @for $i from 1 through 5 {
+            .social#{$i} {
+                width: 20%;
+                background-color: darken(rgb(154, 154, 182), $i*5);
+                font-size: $i * 1rem;
+                color: nth($textColor, $i);
+            }
+            
+        }
+    }
+}
